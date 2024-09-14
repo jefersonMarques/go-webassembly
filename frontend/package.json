@@ -1,0 +1,15 @@
+{
+    "name": "grpc-webassembly-app",
+    "version": "1.0.0",
+    "scripts": {
+      "build": "tsc && postcss styles.css -o output.css",
+      "watch-ts": "tsc --project frontend/tsconfig.json --watch"
+    },
+    "devDependencies": {
+      "typescript": "^4.4.4",
+      "tailwindcss": "^3.0.0",
+      "postcss": "^8.3.6",
+      "autoprefixer": "^10.3.1"
+    }
+  }
+  

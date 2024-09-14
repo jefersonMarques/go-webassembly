@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+package web;
+
+// Adicione esta linha com o caminho do pacote Go
+option go_package = "grpc-client/web";
+
+// Definição do serviço gRPC
+service WeatherService {
+  rpc GetWeather (WeatherRequest) returns (WeatherResponse);
+}
+
+message WeatherRequest {
+  string city = 1;
+}
+
+message WeatherResponse {
+  string city = 1;
+  float temperature = 2;
+  string description = 3;
+}

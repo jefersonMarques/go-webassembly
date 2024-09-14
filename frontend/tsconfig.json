@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "target": "ES2015",           // Usar ES6 ou superior para suporte a Promises
+    "lib": ["ES2015", "DOM"],     // Incluir suporte para Promises e APIs do DOM
+    "outDir": "./",               // Diretório de saída será a pasta frontend
+    "module": "ES6",              // Módulos do ES6
+    "strict": true,               // Ativa verificações estritas de tipos
+    "esModuleInterop": true       // Interoperabilidade entre CommonJS e ES Modules
+  },
+  "include": [
+    "./main.ts"                   // Caminho correto para o arquivo main.ts na pasta frontend
+  ],
+  "exclude": [
+    "node_modules", "dist", "main.js"  // Excluir node_modules e arquivos de saída
+  ]
+}

@@ -1,0 +1,20 @@
+#!/bin/bash
+#Criar o build,sh com autorizacao chmod +x build.sh
+
+# Compilar main_wasm
+echo "Compilando main_wasm.go..."
+GOOS=js GOARCH=wasm go build -o frontend/main.wasm wasm/main/main_wasm.go
+
+# Compilar weather_wasm
+echo "Compilando weather_wasm.go..."
+GOOS=js GOARCH=wasm go build -o frontend/weather.wasm wasm/weather/weather_wasm.go
+
+echo "Compilação completa!"
+
+Compilar o build.sh
+./build.sh
+
+# Automatizar
+#Usei o entr (sudo apt install entr)
+
+ls wasm/main/main_wasm.go wasm/weather/weather_wasm.go | entr -c ./build.sh

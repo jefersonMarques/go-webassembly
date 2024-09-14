@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App com Navegação Dinâmica</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <script src="/static/wasm_exec.js"></script>
+    <script>
+        const go = new Go();
+        WebAssembly.instantiateStreaming(fetch("/static/main.wasm"), go.importObject).then((result) => {
+            go.run(result.instance);
+        });
+    </script>
+</head>
+<body>
+    <nav id="main-nav">
+        <ul>
+            <li><a href="#" id="nav-home">Home</a></li>
+            <li><a href="#" id="nav-weather">Weather</a></li>
+            <li><a href="#" id="nav-about">About</a></li>
+        </ul>
+    </nav>
+    <div id="content">
+        <!-- O conteúdo será alterado dinamicamente -->
+        <h1>Bem-vindo à Home!</h1>
+        <p>Este é o conteúdo inicial da página.</p>
+    </div>
+</body>
+</html>

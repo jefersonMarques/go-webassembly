@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  app:
+    build: .
+    command: sleep infinity  # Comando para manter o container em execução
+    volumes:
+      - .:/app  # Mapear o diretório local para dentro do container
+    ports:
+      - "50051:50051"
